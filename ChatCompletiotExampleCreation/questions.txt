@@ -1,0 +1,81 @@
+How does a computer add two integer values?
+How does a computer handle floating point values?
+How does a browser load an image from the internet?
+How can the computer process text if it only knows bits and bytes?
+How is it possible that a computer can draw 3D images if it only has a 2D monitor?
+What is stack and heap?
+How does a computer perform multiplication on two integer values?
+How does a CPU execute instructions at the hardware level?
+How does a computer handle negative numbers in binary?
+How does a computer perform division using binary operations?
+How do floating-point rounding errors occur in computations?
+How does a compiler translate high-level code into machine code?
+How does a browser render a webpage from HTML, CSS, and JavaScript?
+How does a GPU accelerate graphics rendering?
+How does a computer process and display colors on a screen?
+How does a computer store and retrieve files on a hard drive?
+How does RAM differ from ROM in terms of functionality?
+How does a computer recognize keyboard and mouse inputs?
+How does an operating system manage multiple processes at once?
+How does a computer establish a connection to the internet?
+How does a browser cache images and data for faster loading?
+How does an interpreter execute code differently from a compiler?
+How does a computer compress and decompress files?
+How does an encryption algorithm protect data during transmission?
+How does a CPU handle interrupts and exceptions?
+How does a computer boot up from a powered-off state?
+How does a database store and retrieve structured information?
+How does an operating system manage memory allocation for programs?
+How does a virtual machine emulate a physical computer?
+How does a computer synchronize time across different applications?
+How does an operating system schedule CPU tasks for efficiency?
+How does a computer generate random numbers?
+How does a hashing algorithm work in data security?
+How does a web server respond to an HTTP request?
+How does a computer translate domain names into IP addresses?
+How does a file system organize and track stored files?
+How does a computer handle multi-threading and parallel execution?
+How does an SSD differ from an HDD in performance and operation?
+How does a computer represent and manipulate characters using ASCII and Unicode?
+How does an AI algorithm learn from data?
+How does a computer manage power consumption and thermal regulation?
+How does a firewall protect a network from cyber threats?
+How does a VPN secure internet traffic?
+How does a programming language manage memory allocation?
+How does an algorithm optimize search performance in large datasets?
+How does a quantum computer differ from a classical computer?
+How does an operating system handle deadlocks and resource allocation?
+How does a computer process audio signals and convert them into sound?
+How does a graphics pipeline work in rendering 3D images?
+How does machine learning recognize patterns in images and text?
+How does an operating system provide file access permissions?
+How does an antivirus program detect and remove malware?
+How does a neural network simulate brain-like learning?
+How does a programming language handle recursion?
+How does a checksum verify the integrity of transmitted data?
+How does a compiler optimize code for performance improvements?
+What is a CPU?
+What is an operating system?
+What is RAM, and why is it important?
+What is a VPN, and how does it work?
+What is cloud computing?
+What is a programming language?
+What is an IP address?
+What is a web browser?
+What is a file system?
+What is a database?
+What is an algorithm?
+What is encryption?
+What is a deadlock in computing?
+What is a cache, and how does it speed up performance?
+What is a firewall, and how does it protect a computer?
+What is a process in computing?
+What is multithreading, and how does it improve performance?
+What is a compiler, and how does it work?
+What is a function in programming?
+What is the difference between HTTP and HTTPS?
+What is a server, and how does it work?
+What is a software update, and why is it important?
+What is a binary number system, and why do computers use it?
+What is a domain name, and how is it related to an IP address?
+What is artificial intelligence (AI)
