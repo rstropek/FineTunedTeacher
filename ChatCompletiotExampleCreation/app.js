@@ -48,7 +48,7 @@ const processQuestion = async (question) => {
     });
 
     const answer = response.choices[0].message.content;
-    fs.writeFileSync(filePath, `${question}\n\n`, "utf8")
+    fs.writeFileSync(filePath, `${question}\n{seperator}\n`, "utf8")
     fs.appendFileSync(filePath, answer, "utf8");
     console.log(`Saved response to: ${fileName} in the folder ${folderPath}`);
   } catch (error) {
