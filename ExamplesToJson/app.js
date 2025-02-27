@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const outputFile = 'fineTuningExample.json';
+const outputFile = path.join('..', 'fineTuningExample.json');
 
 // Read file
 function readFile(filepath) {
