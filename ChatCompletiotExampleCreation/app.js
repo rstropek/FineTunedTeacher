@@ -15,19 +15,18 @@ const readFile = (filePath) => fs.readFileSync(filePath, "utf8").trim();
 
 // Read prompt and questions
 const promptTemplate = readFile("prompt.md");
-const questions = readFile("questions.txt").split("\n").map(q => q.trim()).filter(q => q);
+const questions = readFile(path.join("..", "questions.txt")).split("\n").map(q => q.trim()).filter(q => q);
 
 // Function to format filename based on question
 const formatFileName = (question) =>
   question.toLowerCase().replace(/\s+/g, "_").replace(/[^\w_]/g, "") + ".md";
-
 
 // Function to send request and save response
 const processQuestion = async (question) => {
   const prompt = promptTemplate.replace("{question}", question);
 
   const fileName = formatFileName(question);
-  const folderPath = "../files"
+  const folderPath = path.join("..", "files")
   const filePath = path.join(folderPath, fileName);
 
 
