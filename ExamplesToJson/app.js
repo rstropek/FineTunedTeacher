@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-const fs = require('fs');
 const outputFile = 'fineTuningExample.json';
 
 // Read file
@@ -24,7 +23,7 @@ function applyTemplate(systemContent, userContent, assistantContent) {
 function processFiles(systemFile, inputFile) {
     const systemContent = readFile(systemFile);
     const content = readFile(inputFile);
-    const parts = content.split('\n\n');
+    const parts = content.split('\n{seperator}\n');
     
     if (parts.length < 2) {
         console.error("File does not contain enough parts to split.");
@@ -32,12 +31,17 @@ function processFiles(systemFile, inputFile) {
     }
     
     const output = applyTemplate(systemContent, parts[0], parts[1]);
-    if(!fs.existsSync(outputFile))
+    if(!fs.existsSync(outputFile) || firstIteration)
     {
         fs.writeFileSync(outputFile, '[\n', 'utf8');
     }
+    else if(!firstIteration)
+    {
+        fs.appendFileSync(outputFile, ',\n', 'utf8');
+    }
     fs.appendFileSync(outputFile, output, 'utf8');
     console.log(`Processed: ${inputFile} -> ${outputFile}`);
+    firstIteration = false;
 }
 
 // Process all .md files in folder
@@ -48,5 +52,6 @@ function processFolder(folder, systemFile) {
     });
 }
 
-processFolder(path.join('..', 'folder'), 'systemPrompt.txt');
+let firstIteration = true;
+processFolder(path.join('..', 'files'), 'systemPrompt.txt');
 fs.appendFileSync(outputFile, '\n]', 'utf8');
