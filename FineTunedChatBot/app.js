@@ -80,13 +80,18 @@ async function askFineTunedModel(modelId) {
       }
 
       try {
-        const response = await openai.chat.completions.create({
-          model: modelId,
-          messages: [{ role: "user", content: question }],
-          temperature: 0.7,
+        
+        const stream = await openai.chat.completions.create({
+            model: modelId,
+            messages: [{ role: "user", content: question }],
+            store: true,
+            stream: true,
         });
-
-        console.log("Response:", response.choices[0].message.content, "\n");
+        
+        console.log("Response:\n");
+        for await (const chunk of stream) {
+            process.stdout.write(chunk.choices[0]?.delta?.content || "");
+        }
       } catch (error) {
         console.error("Error querying the fine-tuned model:", error);
       }
