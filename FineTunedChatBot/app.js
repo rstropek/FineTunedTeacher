@@ -62,8 +62,8 @@ async function waitForFineTunedModel(jobId) {
       return null;
     }
 
-    console.log("Fine-tuning is still in progress... Checking again in 30 seconds.");
-    await new Promise(resolve => setTimeout(resolve, 30000)); // Wait 30 seconds before checking again
+    console.log("Fine-tuning is still in progress... Checking again in 90 seconds.");
+    await new Promise(resolve => setTimeout(resolve, 90000)); // Wait 90 seconds before checking again
   }
 }
 
