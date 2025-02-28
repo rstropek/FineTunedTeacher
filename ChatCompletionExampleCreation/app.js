@@ -58,7 +58,7 @@ const processQuestion = async (question) => {
 
 // Process all questions
 (async () => {
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 10; i++) {
     const question = questions[i];
     await processQuestion(question);
   }
