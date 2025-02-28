@@ -1,5 +1,5 @@
 .env
-fineTuningExample.json
+fineTuningExample.jsonl
 files
 node_modules
 openai-env
