@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const outputFile = path.join('..', 'fineTuningExample.json');
+const outputFile = path.join('..', 'fineTuningExample.jsonl');
 
 // Read file
 function readFile(filepath) {
@@ -16,7 +16,7 @@ function applyTemplate(systemContent, userContent, assistantContent) {
             { role: "user", content: userContent },
             { role: "assistant", content: assistantContent }
         ]
-    }, null, 4);
+    });
 }
 
 // Process file
@@ -31,13 +31,13 @@ function processFiles(systemFile, inputFile) {
     }
     
     const output = applyTemplate(systemContent, parts[0], parts[1]);
-    if(!fs.existsSync(outputFile) || firstIteration)
+    if(firstIteration)
     {
-        fs.writeFileSync(outputFile, '[\n', 'utf8');
+        fs.writeFileSync(outputFile, '', 'utf8');
     }
     else if(!firstIteration)
     {
-        fs.appendFileSync(outputFile, ',\n', 'utf8');
+        fs.appendFileSync(outputFile, '\n', 'utf8');
     }
     fs.appendFileSync(outputFile, output, 'utf8');
     console.log(`Processed: ${inputFile} -> ${outputFile}`);
@@ -54,4 +54,4 @@ function processFolder(folder, systemFile) {
 
 let firstIteration = true;
 processFolder(path.join('..', 'files'), 'systemPrompt.txt');
-fs.appendFileSync(outputFile, '\n]', 'utf8');
+
