@@ -99,7 +99,7 @@ async function askFineTunedModel(modelId) {
       askQuestion(); // Keep asking until the user quits
     });
   }
-  console.log(modelId);
+  console.log(`Used Model: ${modelId}`);
   askQuestion();
 }
 
