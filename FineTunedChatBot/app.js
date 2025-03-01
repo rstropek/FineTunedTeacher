@@ -72,7 +72,7 @@ async function askFineTunedModel(modelId) {
   console.log("\nYou can now ask questions. Type 'q' to quit.\n");
 
   function askQuestion() {
-    rl.question("> ", async (question) => {
+    rl.question("\n> ", async (question) => {
       if (question.toLowerCase() === "q") {
         console.log("Exiting program...");
         rl.close();
@@ -99,7 +99,7 @@ async function askFineTunedModel(modelId) {
       askQuestion(); // Keep asking until the user quits
     });
   }
-
+  console.log(modelId);
   askQuestion();
 }
 
