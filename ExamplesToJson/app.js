@@ -53,5 +53,5 @@ function processFolder(folder, systemFile) {
 }
 
 let firstIteration = true;
-processFolder(path.join('..', 'files'), 'systemPrompt.txt');
+processFolder(path.join('..', 'files'), path.join("..", "systemPrompt.txt"));
 

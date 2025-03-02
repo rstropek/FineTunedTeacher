@@ -83,7 +83,7 @@ async function askFineTunedModel(modelId) {
         
         const stream = await openai.chat.completions.create({
             model: modelId,
-            messages: [{ role: "user", content: question }],
+            messages: [{role: "system", content: fs.readFileSync(path.join("..", "systemPrompt.txt"), "utf-8")},{ role: "user", content: question }],
             store: true,
             stream: true,
         });
