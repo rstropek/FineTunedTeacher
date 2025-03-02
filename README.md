@@ -37,7 +37,6 @@ FineTunedTeacher/
 │
 │── ExamplesToJson/
 │   ├── app.js                   # Converts markdown files into JSONL format
-│   ├── systemPrompt.txt         # System role definition for fine-tuning JSON
 │
 │── FineTunedChatBot/
 │   ├── .env                     # API key for OpenAI access
@@ -47,7 +46,9 @@ FineTunedTeacher/
 │   ├── outputExample.md          # Example processed question and response
 │
 │── fineTuningExample.jsonl       # The final fine-tuning file in JSONL format
-│── questions.txt                 # List of questions to process    
+│── questions.txt                 # List of questions to process   
+│── systemPrompt.txt              # System role definition for fine-tuning JSON and the fine tuned chat bot
+
 
 ```
 
