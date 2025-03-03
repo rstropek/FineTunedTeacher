@@ -6,7 +6,8 @@ import readline from "readline";
 
 
 dotenv.config();
-const inputFilePath = path.join("..", "fineTuningExample.jsonl");
+const inputFilePath = path.join("..", "fineTuningExample_training.jsonl");
+const validationInputFilePath = path.join("..", "fineTuningExample_training.jsonl");
 
 // Initialize OpenAI
 const openai = new OpenAI({
@@ -27,13 +28,20 @@ async function fineTuneModel() {
       file: fs.createReadStream(inputFilePath),
       purpose: "fine-tune",
     });
+    console.log("Uploading test file...");
+    const validationFile = await openai.files.create({
+      file: fs.createReadStream(validationInputFilePath),
+      purpose: "fine-tune",
+    });
 
     console.log("Training file uploaded:", trainingFile.id);
+    console.log("Test file uploaded:", validationFile.id);
 
     console.log("Starting fine-tuning job...");
     const job = await openai.fineTuning.jobs.create({
       training_file: trainingFile.id,
-      model: "gpt-4o-2024-08-06",   
+      validation_file: validationFile.id,
+      model: process.env.BASE_MODEL,   
     });
 
     console.log("Fine-tuning job started:", job.id);

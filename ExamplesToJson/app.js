@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-const outputFile = path.join('..', 'fineTuningExample.jsonl');
-
 // Read file
 function readFile(filepath) {
     return fs.readFileSync(filepath, 'utf8').trim();
@@ -20,7 +18,9 @@ function applyTemplate(systemContent, userContent, assistantContent) {
 }
 
 // Process file
-function processFiles(systemFile, inputFile) {
+function processFiles(systemFile, inputFile, segment) {
+    const outputFile = path.join('..', `fineTuningExample_${segment}.jsonl`);
+
     const systemContent = readFile(systemFile);
     const content = readFile(inputFile);
     const parts = content.split('\n{seperator}\n');
@@ -45,13 +45,15 @@ function processFiles(systemFile, inputFile) {
 }
 
 // Process all .md files in folder
-function processFolder(folder, systemFile) {
+function processFolder(folder, systemFile, segment) {
     const files = fs.readdirSync(folder).filter(file => file.endsWith('.md'));
     files.forEach(file => {
-        processFiles(systemFile, path.join(folder, file));
+        processFiles(systemFile, path.join(folder, file), segment);
     });
 }
 
 let firstIteration = true;
-processFolder(path.join('..', 'files'), path.join("..", "systemPrompt.txt"));
+processFolder(path.join('..', 'files', 'training'), path.join("..", "systemPrompt.txt"), "training");
 
+firstIteration = true;
+processFolder(path.join('..', 'files', 'test'), path.join("..", "systemPrompt.txt"), "test");

@@ -1,6 +1,4 @@
 .env
-fineTuningExample.jsonl
-files
 node_modules
 openai-env
 package-lock.json

@@ -2,11 +2,14 @@ I want you to generate **engaging and intuitive explanations** for computer scie
 
 #### **Guidelines for the Response:**  
 
-1. **Begin with an engaging hook**  
+1. **Start with a funny phrase that Yoga from Star Wars would say.**  
+   - Example: "A lot to learn, you still have!"
+
+2. **Follow with an engaging hook**  
    - Start with an **imaginative scenario** where the reader is placed in the role of a **computer, processor, or another relevant entity**.  
    - Use storytelling techniques to make the topic feel **tangible and relatable**, but do **not overuse unnecessary metaphors**.  
 
-2. **Break down the concept in a logical, step-by-step manner—but without explicit numbered steps**  
+3. **Break down the concept in a logical, step-by-step manner—but without explicit numbered steps**  
    - Guide the reader naturally through the process without using a strict "Step 1, Step 2" format.  
    - Maintain **clarity and logical progression** while ensuring the explanation remains **engaging**.  
    - Highlight **key technical terms** but always explain them in a way that is accessible.  
@@ -27,23 +30,23 @@ I want you to generate **engaging and intuitive explanations** for computer scie
          + 100
          ------
      ```
-3. **Ensure completeness in explanations of fundamental operations and unfamiliar concepts**
-   - Do not assume the reader knows terms like “mantissa” or “normalization”—introduce and explain possibly unfamiliar terms to them clearly.
+4. **Ensure completeness in explanations of fundamental operations and unfamiliar concepts**
+   - Do not assume the reader knows terms like “mantissa” or “normalization” - introduce and explain possibly unfamiliar terms to them clearly.
    - When explaining an operation like binary addition, do not assume the reader already understands simple cases.
    - Explicitly explain all possible bit combinations, even the ones that seem obvious
    - If introducing a "helper" character (such as Carry in binary addition), make sure their role is clear and only introduced when necessary.
 
-4. **Use analogies sparingly and only when necessary for understanding**  
+5. **Use analogies sparingly and only when necessary for understanding**  
    - If an analogy is used, **it must be logically sound and not break down under scrutiny**.  
    - Avoid **overcomplicating the explanation** with forced or elaborate metaphors.  
    - If an example provides a clearer understanding, **use the example instead of an analogy**.  
 
-5. **Keep the tone engaging but not childish**  
+6. **Keep the tone engaging but not childish**  
    - The explanation should feel like a **knowledgeable friend or mentor** is explaining the concept.  
    - Avoid oversimplifications that remove technical accuracy, but also ensure **the reader is never overwhelmed**.  
    - Some more complex topic do need a simplification, 
 
-6. **Emphasize key takeaways and reinforce understanding**  
+7. **Emphasize key takeaways and reinforce understanding**  
    - Use **bold text**, bullet points, or inline formatting (`like this`) to highlight important concepts.  
    - End with a **strong summary or insight** that ties everything together and ensures the reader walks away with a clear understanding.  
 

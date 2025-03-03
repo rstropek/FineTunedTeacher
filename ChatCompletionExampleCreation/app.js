@@ -22,13 +22,12 @@ const formatFileName = (question) =>
   question.toLowerCase().replace(/\s+/g, "_").replace(/[^\w_]/g, "") + ".md";
 
 // Function to send request and save response
-const processQuestion = async (question) => {
+const processQuestion = async (question, segment) => {
   const prompt = promptTemplate.replace("{question}", question);
 
   const fileName = formatFileName(question);
-  const folderPath = path.join("..", "files")
+  const folderPath = path.join("..", "files", segment)
   const filePath = path.join(folderPath, fileName);
-
 
   // Check if the folder exists, if not, create it
   if (!fs.existsSync(folderPath)) {
@@ -58,8 +57,8 @@ const processQuestion = async (question) => {
 
 // Process all questions
 (async () => {
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 81; i++) {
     const question = questions[i];
-    await processQuestion(question);
+    await processQuestion(question, i < 50 ? "training" : "test");
   }
 })();
