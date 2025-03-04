@@ -3,6 +3,8 @@
 ## Project Overview
 This project aims to fine-tune a ChatGPT chatbot efficiently by automating the process of generating fine-tuning data. Instead of manually writing input-output pairs for fine-tuning, the project automates the creation of training data, formats it appropriately, and then fine-tunes the model.
 
+Accompanying slides: [https://slides.com/rainerstropek/fine-tuning-openai/fullscreen](https://slides.com/rainerstropek/fine-tuning-openai/fullscreen)
+
 ## Workflow
 1. **Generating Example Responses (ChatCompletionExampleCreation)**
    - This script processes user-provided questions using a predefined system prompt.
