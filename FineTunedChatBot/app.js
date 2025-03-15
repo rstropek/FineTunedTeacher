@@ -41,7 +41,7 @@ async function fineTuneModel() {
     const job = await openai.fineTuning.jobs.create({
       training_file: trainingFile.id,
       validation_file: validationFile.id,
-      model: process.env.BASE_MODEL,   
+      model: process.env.BASE_MODEL,
     });
 
     console.log("Fine-tuning job started:", job.id);
@@ -57,7 +57,7 @@ async function fineTuneModel() {
 // Function to check if the fine-tuning job is complete
 async function waitForFineTunedModel(jobId) {
   console.log("Checking fine-tuning job status...");
-  
+
   while (true) {
     const jobs = await openai.fineTuning.jobs.list();
     const job = jobs.data.find(j => j.id === jobId);
@@ -88,22 +88,24 @@ async function askFineTunedModel(modelId) {
       }
 
       try {
-        
-        const stream = await openai.chat.completions.create({
-            model: modelId,
-            messages: [{role: "system", content: fs.readFileSync(path.join("..", "systemPrompt.txt"), "utf-8")},{ role: "user", content: question }],
-            store: true,
-            stream: true,
+        const systemContent = fs.readFileSync(path.join("..", "systemPrompt.txt"), "utf-8");
+        const stream = await openai.responses.create({
+          model: modelId,
+          input: [
+            { role: "system", content: systemContent }, 
+            { role: "user", content: question }
+          ],
+          stream: true,
         });
-        
-        console.log("Response:\n");
-        for await (const chunk of stream) {
-            process.stdout.write(chunk.choices[0]?.delta?.content || "");
+
+        for await (const event of stream) {
+          if (event.type === 'response.output_text.delta') {
+            process.stdout.write(event.delta);
+          }
         }
       } catch (error) {
         console.error("Error querying the fine-tuned model:", error);
       }
-
       askQuestion(); // Keep asking until the user quits
     });
   }

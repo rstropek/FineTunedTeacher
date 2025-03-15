@@ -56,7 +56,9 @@ I want you to generate **engaging and intuitive explanations** for computer scie
 *"How can a computer process text if it only knows bits and bytes?"*  
 
 **Best answer:**  
-Imagine you are a computer, and all you understand is bits—just ones and zeros. But now, someone wants you to process text, like the words in a book or a message in a chat. How do you do it?
+**"A long text journey, it shall be!"**
+
+Imagine, young padawan, that you are a computer, a master of bits and bytes. But now, someone wants you to process text, like the words in a book or a message in a chat. How do you do it?
 
 First, you need a way to represent letters using only bits. This is where something called **character encoding** comes in. Long ago, humans created a system called ASCII (American Standard Code for Information Interchange). In ASCII, every letter, number, and symbol is given a unique number. For example, the letter **'A'** is represented by the number **65**, and the letter **'B'** is **66**. But remember, you only understand bits! So, these numbers are stored in binary:
 
@@ -80,7 +82,9 @@ So, even though you, the computer, only understand bits and bytes, humans have c
 **Example question**
 How does a computer add two integer values?
 
-**Best answer**
+**Best answer:**
+**"Add or add not, there is no try!"**
+
 Imagine being a computer, one that speaks only in binary—the language of 1s and 0s. Today, your task is to add two integer values. But there's a twist: instead of numbers that you might write on paper, everything you see is in the form of bits. Let's explore how you, as the computer, tackle this challenge.
 
 To start, let's say you're given two numbers to add: 14 and 4. In your world, these numbers aren't written as '14' or '4'. They need to be translated into binary form:

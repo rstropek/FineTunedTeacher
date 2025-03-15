@@ -41,12 +41,12 @@ const processQuestion = async (question, segment) => {
   }
 
   try {
-    const response = await openai.chat.completions.create({
+    const response = await openai.responses.create({
       model: "gpt-4o",
-      messages: [{ role: "user", content: prompt }],
-    });
+      input: [{ role: "user", content: prompt }],
+  });
 
-    const answer = response.choices[0].message.content;
+    const answer = response.output_text;
     fs.writeFileSync(filePath, `${question}\n{seperator}\n`, "utf8")
     fs.appendFileSync(filePath, answer, "utf8");
     console.log(`Saved response to: ${fileName} in the folder ${folderPath}`);
