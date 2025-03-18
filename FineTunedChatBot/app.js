@@ -91,10 +91,8 @@ async function askFineTunedModel(modelId) {
         const systemContent = fs.readFileSync(path.join("..", "systemPrompt.txt"), "utf-8");
         const stream = await openai.responses.create({
           model: modelId,
-          input: [
-            { role: "system", content: systemContent }, 
-            { role: "user", content: question }
-          ],
+          input: question,
+          instructions: systemContent,
           stream: true,
         });
 

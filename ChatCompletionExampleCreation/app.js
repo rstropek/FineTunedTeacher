@@ -43,7 +43,7 @@ const processQuestion = async (question, segment) => {
   try {
     const response = await openai.responses.create({
       model: "gpt-4o",
-      input: [{ role: "user", content: prompt }],
+      input: prompt,
   });
 
     const answer = response.output_text;
